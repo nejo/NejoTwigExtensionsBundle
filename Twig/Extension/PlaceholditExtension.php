@@ -22,7 +22,12 @@ class PlaceholditExtension extends \Twig_Extension
     /**
      * @var string
      */
-    private $_url = '';
+    private $_baseUrl = '';
+
+    /**
+     * @var string
+     */
+    private $_size = '';
 
     /**
      * @var string
@@ -74,7 +79,8 @@ class PlaceholditExtension extends \Twig_Extension
         $format=''
     )
     {
-        $this->_setUrl('http://placehold.it/' . $size);
+        $this->_setBaseUrl('http://placehold.it');
+        $this->_setSize($size);
         $this->_setBackgroundColor($backgroundColor);
         $this->_setForegroundColor($foregroundColor);
         $this->_setText($text);
@@ -87,7 +93,8 @@ class PlaceholditExtension extends \Twig_Extension
      */
     private function _getPlaceholditUrl()
     {
-        $url = $this->_getUrl();
+        $url = $this->_getBaseUrl();
+        $url .= $this->_getSize();
         $url .= $this->_getBackgroundColor();
         $url .= $this->_getForegroundColor();
         $url .= $this->_getText();
@@ -98,17 +105,33 @@ class PlaceholditExtension extends \Twig_Extension
     /**
      * @param string $url
      */
-    private function _setUrl($url)
+    private function _setBaseUrl($url)
     {
-        $this->_url = $url;
+        $this->_baseUrl = $url;
     }
 
     /**
      * @return string
      */
-    private function _getUrl()
+    private function _getBaseUrl()
     {
-        return $this->_url;
+        return $this->_baseUrl;
+    }
+
+    /**
+     * @param string $size
+     */
+    private function _setSize($size)
+    {
+        $this->_size = $size;
+    }
+
+    /**
+     * @return string
+     */
+    private function _getSize()
+    {
+        return '/' . $this->_size;
     }
 
     /**
