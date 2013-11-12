@@ -4,7 +4,7 @@
  * @author Alejandro Cornejo <acornejovila@gmail.com>
  */
 
-namespace Nejo\PlaceholdrTwigExtensionBundle\DependencyInjection;
+namespace Nejo\TwigExtensionsBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder,
     Symfony\Component\Config\FileLocator,
@@ -13,8 +13,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder,
 
 /**
  * Class PlaceholdrTwigExtension
- *
- * @package Nejo\PlaceholdrTwigExtensionBundle\DependencyInjection
  */
 class PlaceholdrTwigExtension extends Extension
 {

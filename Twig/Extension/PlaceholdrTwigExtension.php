@@ -4,7 +4,7 @@
  * @author Alejandro Cornejo <acornejovila@gmail.com>
  */
 
-namespace Nejo\PlaceholdrTwigExtensionBundle\Twig\Extension;
+namespace Nejo\TwigExtensionsBundle\Twig\Extension;
 
 /**
  * Class PlaceholdrExtension
@@ -54,7 +54,7 @@ class PlaceholdrTwigExtension extends \Twig_Extension
      */
     public function getName()
     {
-        return 'placeholdr_extension';
+        return 'nejo_placeholdr_extension';
     }
 
     /**

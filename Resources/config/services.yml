@@ -1,6 +1,6 @@
 services:
     nejo_twig_extensions.placeholdr:
-      class: Nejo\PlaceholdrTwigExtensionBundle\Twig\Extension\PlaceholdrTwigExtension
+      class: Nejo\TwigExtensionsBundle\Twig\Extension\PlaceholdrTwigExtension
       public: false
       tags:
         - { name: twig.extension }

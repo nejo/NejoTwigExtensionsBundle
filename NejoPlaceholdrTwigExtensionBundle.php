@@ -1,19 +1,17 @@
 <?php
 
 /**
- * NejoPlaceholdrExtensionBundle
- *
  * @author Alejandro Cornejo <acornejovila@gmail.com>
  */
 
-namespace Nejo\PlaceholdrTwigExtensionBundle;
+namespace Nejo\TwigExtensionsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * PlaceholdrExtensionBundle
+ * Bundle with some useful Twig Extensions
  */
-class NejoPlaceholdrTwigExtensionBundle extends Bundle
+class NejoTwigExtensionsBundle extends Bundle
 {
 
 }
