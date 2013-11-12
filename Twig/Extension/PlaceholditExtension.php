@@ -50,7 +50,13 @@ class PlaceholditExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            new \Twig_SimpleFilter('placeholdit', array($this, 'placeholditUrl')),
+            new \Twig_SimpleFilter(
+                'placeholdit',
+                array(
+                    $this,
+                    'placeholditUrl'
+                )
+            ),
         );
     }
 
