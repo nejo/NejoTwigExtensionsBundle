@@ -14,6 +14,8 @@ namespace Nejo\TwigExtensionsBundle\Twig\Extension;
 class PlaceholditExtension extends \Twig_Extension
 {
 
+    const BASE_URL = 'http://placehold.it';
+
     /**
      * @var array
      */
@@ -90,7 +92,7 @@ class PlaceholditExtension extends \Twig_Extension
         $format=''
     )
     {
-        $this->_setBaseUrl('http://placehold.it');
+        $this->_setBaseUrl(static::BASE_URL);
         $this->_setSize($size);
         $this->_setText($text);
         $this->_setBackgroundColor($backgroundColor);
@@ -200,7 +202,14 @@ class PlaceholditExtension extends \Twig_Extension
      */
     private function _getForegroundColor()
     {
-        return '/' . $this->_foregroundColor;
+        $fgColor = $this->_foregroundColor;
+        $bgColor = $this->_getBackgroundColor();
+
+        if (!empty($fgColor) && !empty($bgColor)) {
+            $fgColor = '/' . $fgColor;
+        }
+
+        return $fgColor;
     }
 
     /**
