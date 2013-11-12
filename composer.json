@@ -1,5 +1,5 @@
 {
-    "name": "nejo/placeholdr-twig-extension",
+    "name": "nejo/placeholdr-twig-extension-bundle",
     "type": "symfony-bundle",
     "description": "Twig extension for using Placeholdr.it service for your Symfony2 project.",
     "keywords": ["twig", "twig extension", "symfony", "placeholdr", "image", "thumbnail", "nejo"],
