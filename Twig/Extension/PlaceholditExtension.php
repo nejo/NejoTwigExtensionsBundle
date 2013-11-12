@@ -54,7 +54,7 @@ class PlaceholditExtension extends \Twig_Extension
                 'placeholdit',
                 array(
                     $this,
-                    'placeholditUrl'
+                    'getPlaceholditUrl'
                 )
             ),
         );
@@ -77,7 +77,7 @@ class PlaceholditExtension extends \Twig_Extension
      *
      * @return string
      */
-    public function placeholditUrl(
+    public function getPlaceholditUrl(
         $size,
         $text='',
         $backgroundColor='',
