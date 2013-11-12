@@ -1,0 +1,24 @@
+{
+    "name": "nejo/placeholdr-twig-extension",
+    "type": "symfony-bundle",
+    "description": "Twig extension for using Placeholdr.it service for your Symfony2 project.",
+    "keywords": ["twig", "twig extension", "symfony", "placeholdr", "image", "thumbnail", "nejo"],
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Alejandro Cornejo",
+            "email": "acornejovila@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "2.*",
+        "twig/twig": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Nejo\\PlaceholdrTwigExtensionBundle": ""
+        }
+    },
+    "target-dir": "Nejo/PlaceholdrTwigExtensionBundle"
+}
