@@ -13,7 +13,7 @@ namespace Nejo\TwigExtensionsBundle\Twig\Extension;
  *
  * @link http://placehold.it/
  */
-class PlaceholdrExtension extends \Twig_Extension
+class PlaceholditExtension extends \Twig_Extension
 {
 
     const DEFAULT_FG_COLOR = '333333';
@@ -45,7 +45,7 @@ class PlaceholdrExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            new \Twig_SimpleFilter('placeholdr', array($this, 'placeholdrUrl')),
+            new \Twig_SimpleFilter('placeholdit', array($this, 'placeholditUrl')),
         );
     }
 
@@ -54,7 +54,7 @@ class PlaceholdrExtension extends \Twig_Extension
      */
     public function getName()
     {
-        return 'nejo_placeholdr_extension';
+        return 'nejo_placeholdit_extension';
     }
 
     /**
@@ -66,7 +66,7 @@ class PlaceholdrExtension extends \Twig_Extension
      *
      * @return string
      */
-    public function placeholdrUrl(
+    public function placeholditUrl(
         $size,
         $text='',
         $backgroundColor='',
@@ -79,13 +79,13 @@ class PlaceholdrExtension extends \Twig_Extension
         $this->_setForegroundColor($foregroundColor);
         $this->_setText($text);
 
-        return $this->_getPlaceHoldrUrl();
+        return $this->_getPlaceholditUrl();
     }
 
     /**
      * @return string
      */
-    private function _getPlaceholdrUrl()
+    private function _getPlaceholditUrl()
     {
         $url = $this->_getUrl();
         $url .= $this->_getBackgroundColor();
