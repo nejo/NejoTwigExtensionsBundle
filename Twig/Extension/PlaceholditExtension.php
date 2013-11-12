@@ -7,8 +7,6 @@
 namespace Nejo\TwigExtensionsBundle\Twig\Extension;
 
 /**
- * Class PlaceholdrExtension
- *
  * Twig extension for calling the service Placehold.it
  *
  * @link http://placehold.it/
@@ -16,8 +14,10 @@ namespace Nejo\TwigExtensionsBundle\Twig\Extension;
 class PlaceholditExtension extends \Twig_Extension
 {
 
-    const DEFAULT_FG_COLOR = '333333';
-    const DEFAULT_FORMAT = '.jpg';
+    /**
+     * @var array
+     */
+    private $_formatsAccepted = array('jpg', 'jpeg', 'gif', 'png');
 
     /**
      * @var string
@@ -43,6 +43,11 @@ class PlaceholditExtension extends \Twig_Extension
      * @var string
      */
     private $_text = '';
+
+    /**
+     * @var string
+     */
+    private $_format = '';
 
     /**
      * @return array
@@ -87,9 +92,10 @@ class PlaceholditExtension extends \Twig_Extension
     {
         $this->_setBaseUrl('http://placehold.it');
         $this->_setSize($size);
+        $this->_setText($text);
         $this->_setBackgroundColor($backgroundColor);
         $this->_setForegroundColor($foregroundColor);
-        $this->_setText($text);
+        $this->_setFormat($format);
 
         return $this->_getPlaceholditUrl();
     }
@@ -101,6 +107,7 @@ class PlaceholditExtension extends \Twig_Extension
     {
         $url = $this->_getBaseUrl();
         $url .= $this->_getSize();
+        $url .= $this->_getFormat();
         $url .= $this->_getBackgroundColor();
         $url .= $this->_getForegroundColor();
         $url .= $this->_getText();
@@ -194,5 +201,29 @@ class PlaceholditExtension extends \Twig_Extension
     private function _getForegroundColor()
     {
         return '/' . $this->_foregroundColor;
+    }
+
+    /**
+     * @param string $format
+     */
+    private function _setFormat($format)
+    {
+        if (!empty($format) && in_array($format, $this->_formatsAccepted)) {
+            $this->_format = $format;
+        }
+    }
+
+    /**
+     * @return string
+     */
+    private function _getFormat()
+    {
+        $format = '';
+
+        if (!empty($this->_format)) {
+            $format = $this->_format;
+        }
+
+        return $format;
     }
 }
