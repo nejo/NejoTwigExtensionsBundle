@@ -15,7 +15,7 @@ class PlaceholditExtension extends \Twig_Extension
 {
 
     const BASE_URL = 'http://placehold.it';
-    
+
     /**
      * @var array
      */
@@ -202,7 +202,14 @@ class PlaceholditExtension extends \Twig_Extension
      */
     private function _getForegroundColor()
     {
-        return '/' . $this->_foregroundColor;
+        $fgColor = $this->_foregroundColor;
+        $bgColor = $this->_getBackgroundColor();
+
+        if (!empty($fgColor) && !empty($bgColor)) {
+            $fgColor = '/' . $fgColor;
+        }
+
+        return $fgColor;
     }
 
     /**
