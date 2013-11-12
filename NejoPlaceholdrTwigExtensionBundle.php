@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PlaceholdrExtensionBundle
+ * NejoPlaceholdrExtensionBundle
  *
  * @author Alejandro Cornejo <acornejovila@gmail.com>
  */
@@ -13,7 +13,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * PlaceholdrExtensionBundle
  */
-class PlaceholdrTwigExtensionBundle extends Bundle
+class NejoPlaceholdrTwigExtensionBundle extends Bundle
 {
 
 }
