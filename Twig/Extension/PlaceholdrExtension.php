@@ -13,7 +13,7 @@ namespace Nejo\TwigExtensionsBundle\Twig\Extension;
  *
  * @link http://placehold.it/
  */
-class PlaceholdrTwigExtension extends \Twig_Extension
+class PlaceholdrExtension extends \Twig_Extension
 {
 
     const DEFAULT_FG_COLOR = '333333';
