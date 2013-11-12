@@ -12,9 +12,9 @@ use Symfony\Component\DependencyInjection\ContainerBuilder,
     Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * Class PlaceholdrTwigExtension
+ * Dependency Injection manager
  */
-class PlaceholdrTwigExtension extends Extension
+class NejoTwigExtensionsExtension extends Extension
 {
     /**
      * {@inheritdoc}
