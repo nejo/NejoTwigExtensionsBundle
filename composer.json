@@ -17,8 +17,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Nejo\\PlaceholdrTwigExtensionBundle": ""
+            "Nejo\\TwigExtensionsBundle": ""
         }
     },
-    "target-dir": "Nejo/PlaceholdrTwigExtensionBundle"
+    "target-dir": "Nejo/TwigExtensionsBundle"
 }
