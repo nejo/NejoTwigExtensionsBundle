@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Alejandro Cornejo <acornejovila@gmail.com>
+ */
+
 namespace Nejo\PlaceholdrTwigExtensionBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder,
@@ -8,10 +12,9 @@ use Symfony\Component\DependencyInjection\ContainerBuilder,
     Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * Widop twig extensions configuration.
+ * Class PlaceholdrTwigExtension
  *
- *
- * @author Alejandro Cornejo <acornejovila@gmail.com>
+ * @package Nejo\PlaceholdrTwigExtensionBundle\DependencyInjection
  */
 class PlaceholdrTwigExtension extends Extension
 {

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Alejandro Cornejo <acornejovila@gmail.com>
+ */
+
 namespace Nejo\PlaceholdrTwigExtensionBundle\Twig\Extension;
 
 /**
@@ -8,8 +12,6 @@ namespace Nejo\PlaceholdrTwigExtensionBundle\Twig\Extension;
  * Twig extension for calling the service Placehold.it
  *
  * @link http://placehold.it/
- *
- * @author Alejandro Cornejo <acornejovila@gmail.com>
  */
 class PlaceholdrTwigExtension extends \Twig_Extension
 {
