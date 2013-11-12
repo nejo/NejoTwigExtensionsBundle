@@ -11,7 +11,7 @@ namespace Nejo\PlaceholdrTwigExtensionBundle\Twig\Extension;
  *
  * @author Alejandro Cornejo <acornejovila@gmail.com>
  */
-class PlaceholdrExtension extends \Twig_Extension
+class PlaceholdrTwigExtension extends \Twig_Extension
 {
 
     const DEFAULT_FG_COLOR = '333333';
