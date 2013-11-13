@@ -22,6 +22,17 @@ class PlaceholditExtensionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @covers PlaceholditExtension::getName
+     */
+    public function testGetName()
+    {
+        $this->assertEquals(
+            'nejo_placeholdit_extension',
+            $this->_twigExtension->getName()
+        );
+    }
+
+    /**
      * @covers PlaceholditExtension::getFilters
      */
     public function testGetFilters()
