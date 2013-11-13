@@ -22,7 +22,7 @@ class PlaceholditExtensionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PlaceholditExtension::getName
+     * @covers Nejo\TwigExtensionsBundle\Twig\Extension\PlaceholditExtension::getName
      */
     public function testGetName()
     {
@@ -33,7 +33,7 @@ class PlaceholditExtensionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PlaceholditExtension::getFilters
+     * @covers Nejo\TwigExtensionsBundle\Twig\Extension\PlaceholditExtension::getFilters
      */
     public function testGetFilters()
     {
@@ -62,7 +62,7 @@ class PlaceholditExtensionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PlaceholditExtension::getPlaceholditUrl
+     * @covers Nejo\TwigExtensionsBundle\Twig\Extension\PlaceholditExtension::getPlaceholditUrl
      */
     public function testPlaceholditFilter()
     {
