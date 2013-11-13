@@ -14,9 +14,6 @@
         "php": ">=5.3.3",
         "twig/twig": "1.*"
     },
-    "require-dev": {
-        "symfony/symfony": "2.*"
-    },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
