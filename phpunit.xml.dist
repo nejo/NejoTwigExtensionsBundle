@@ -2,7 +2,7 @@
 <phpunit bootstrap="Tests/bootstrap.php" colors="true">
     <testsuites>
         <testsuite name="NejoTwigExtensionsBundle">
-            <directory suffix="Test.php">Tests</directory>
+            <directory suffix="Test.php">./Tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>
