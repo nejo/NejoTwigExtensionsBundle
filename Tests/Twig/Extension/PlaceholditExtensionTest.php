@@ -68,9 +68,15 @@ class PlaceholditExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $twig = new \Twig_Environment(new \Twig_Loader_String());
         $twig->addExtension($this->_twigExtension);
+
         $this->assertEquals(
             'http://placehold.it/300',
             $twig->render("{{ '300' | placeholdit }}")
+        );
+
+        $this->assertEquals(
+            'http://placehold.it/300png/000/fff&amp;text=jander+klander',
+            $twig->render("{{ '300' | placeholdit('jander klander', '000', 'fff', 'png') }}")
         );
     }
 }
