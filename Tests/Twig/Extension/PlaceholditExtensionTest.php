@@ -43,7 +43,7 @@ class PlaceholditExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Twig_SimpleFilter', $result[0]);
 
         /**
-         * @var \Twig_SimpleFilter
+         * @var \Twig_SimpleFilter $object
          */
         $object = $result[0];
 
@@ -59,5 +59,18 @@ class PlaceholditExtensionTest extends \PHPUnit_Framework_TestCase
             $callable[0]
         );
         $this->assertEquals('getPlaceholditUrl', $callable[1]);
+    }
+
+    /**
+     * @covers PlaceholditExtension::getPlaceholditUrl
+     */
+    public function testPlaceholditFilter()
+    {
+        $twig = new \Twig_Environment(new \Twig_Loader_String());
+        $twig->addExtension($this->_twigExtension);
+        $this->assertEquals(
+            'http://placehold.it/300',
+            $twig->render("{{ '300' | placeholdit }}")
+        );
     }
 }

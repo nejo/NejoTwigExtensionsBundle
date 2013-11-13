@@ -186,7 +186,13 @@ class PlaceholditExtension extends \Twig_Extension
      */
     private function _getBackgroundColor()
     {
-        return '/' . $this->_backgroundColor;
+        $bgColor = '';
+
+        if (!empty($this->_backgroundColor)) {
+            $bgColor = '/' . $this->_backgroundColor;
+        }
+
+        return $bgColor;
     }
 
     /**
