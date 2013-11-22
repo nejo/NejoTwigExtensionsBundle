@@ -64,21 +64,59 @@ class PlaceholditExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers Nejo\TwigExtensionsBundle\Twig\Extension\PlaceholditExtension::getPlaceholditUrl
      */
-    public function testPlaceholditFilter()
+    public function testPlaceholditFilterBasic()
     {
         $twig = new \Twig_Environment(new \Twig_Loader_String());
         $twig->addExtension($this->_twigExtension);
 
         $this->assertEquals(
-            'http://placehold.it/300',
-            $twig->render("{{ '300' | placeholdit }}")
+             'http://placehold.it/300',
+             $twig->render("{{ '300' | placeholdit }}")
         );
+    }
+
+    /**
+     * @covers Nejo\TwigExtensionsBundle\Twig\Extension\PlaceholditExtension::getPlaceholditUrl
+     * @dataProvider placeholditFilterProvider
+     */
+    public function testPlaceholditFilterWithParams($expected, $params)
+    {
+        $twig = new \Twig_Environment(new \Twig_Loader_String());
+        $twig->addExtension($this->_twigExtension);
 
         $this->assertEquals(
-            'http://placehold.it/300png/000/fff&amp;text=jander+klander',
-            $twig->render(
-                "{{ '300' | placeholdit('jander klander', '000', 'fff', 'png') }}"
+            $expected,
+            html_entity_decode(
+                $twig->render(
+                    "{{ '300' | placeholdit($params) }}"
+                )
             )
+        );
+    }
+
+    public function placeholditFilterProvider()
+    {
+        return array(
+            'all possible' => array(
+                'expected' => 'http://placehold.it/300png/000/fff&text=jander+klander',
+                'params'   => "'jander klander', '000', 'fff', 'png'",
+            ),
+            'text only' => array(
+                'expected' => 'http://placehold.it/300&text=jander+klander',
+                'params'   => "'jander klander'",
+            ),
+            'bg color only' => array(
+                'expected' => 'http://placehold.it/300/333',
+                'params'   => "'', '333'",
+            ),
+            'fg color only' => array(
+                'expected' => 'http://placehold.it/300/666',
+                'params'   => "'', '', '666'",
+            ),
+            'format only' => array(
+                'expected' => 'http://placehold.it/300gif',
+                'params'   => "'', '', '', 'gif'",
+            ),
         );
     }
 
