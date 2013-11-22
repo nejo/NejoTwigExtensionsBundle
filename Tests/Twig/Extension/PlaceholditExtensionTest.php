@@ -76,7 +76,32 @@ class PlaceholditExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(
             'http://placehold.it/300png/000/fff&amp;text=jander+klander',
-            $twig->render("{{ '300' | placeholdit('jander klander', '000', 'fff', 'png') }}")
+            $twig->render(
+                "{{ '300' | placeholdit('jander klander', '000', 'fff', 'png') }}"
+            )
+        );
+    }
+
+    /**
+     * @covers Nejo\TwigExtensionsBundle\Twig\Extension\PlaceholditExtension::getPlaceholditImage
+     */
+    public function testPlaceholditFunction()
+    {
+        $twig = new \Twig_Environment(new \Twig_Loader_String());
+        $twig->addExtension($this->_twigExtension);
+
+        $this->assertSame(
+             '<img src="http://placehold.it/300" alt="" />',
+             html_entity_decode($twig->render("{{ placeholdit('300') }}"))
+        );
+
+        $this->assertEquals(
+            '<img src="http://placehold.it/300png/000/fff&text=jander+klander" alt="" />',
+            html_entity_decode(
+                $twig->render(
+                    "{{ placeholdit('300', 'jander klander', '000', 'fff', 'png') }}"
+                )
+            )
         );
     }
 }

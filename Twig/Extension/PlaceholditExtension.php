@@ -60,8 +60,24 @@ class PlaceholditExtension extends \Twig_Extension
             new \Twig_SimpleFilter(
                 'placeholdit',
                 array(
-                    $this,
-                    'getPlaceholditUrl'
+                     $this,
+                     'getPlaceholditUrl'
+                )
+            ),
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function getFunctions()
+    {
+        return array(
+            new \Twig_SimpleFunction(
+                'placeholdit',
+                array(
+                     $this,
+                     'getPlaceholditImage'
                 )
             ),
         );
@@ -73,6 +89,34 @@ class PlaceholditExtension extends \Twig_Extension
     public function getName()
     {
         return 'nejo_placeholdit_extension';
+    }
+
+    /**
+     * @param string $size
+     * @param string $text
+     * @param string $backgroundColor
+     * @param string $foregroundColor
+     * @param string $format
+     *
+     * @return string
+     */
+    public function getPlaceholditImage(
+        $size,
+        $text = '',
+        $backgroundColor = '',
+        $foregroundColor = '',
+        $format = ''
+    )
+    {
+        $src = $this->getPlaceholditUrl(
+            $size,
+            $text,
+            $backgroundColor,
+            $foregroundColor,
+            $format
+        );
+
+        return '<img src="' . $src . '" alt="" />';
     }
 
     /**
