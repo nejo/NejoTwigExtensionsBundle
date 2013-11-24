@@ -110,7 +110,7 @@ class PlaceholditExtensionTest extends \PHPUnit_Framework_TestCase
                 'params'   => "'', '333'",
             ),
             'fg color only' => array(
-                'expected' => 'http://placehold.it/300/666',
+                'expected' => 'http://placehold.it/300//666',
                 'params'   => "'', '', '666'",
             ),
             'format only' => array(

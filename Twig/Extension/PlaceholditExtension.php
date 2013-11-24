@@ -234,6 +234,8 @@ class PlaceholditExtension extends \Twig_Extension
 
         if (!empty($this->_backgroundColor)) {
             $bgColor = '/' . $this->_backgroundColor;
+        } else if (empty($this->_backgroundColor) && !empty($this->_foregroundColor)) {
+            $bgColor = '/';
         }
 
         return $bgColor;
@@ -252,11 +254,10 @@ class PlaceholditExtension extends \Twig_Extension
      */
     private function _getForegroundColor()
     {
-        $fgColor = $this->_foregroundColor;
-        $bgColor = $this->_getBackgroundColor();
+        $fgColor = '';
 
-        if (!empty($fgColor) && !empty($bgColor)) {
-            $fgColor = '/' . $fgColor;
+        if (!empty($this->_foregroundColor)) {
+            $fgColor = '/' . $this->_foregroundColor;
         }
 
         return $fgColor;
