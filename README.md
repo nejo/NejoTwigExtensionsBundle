@@ -2,13 +2,15 @@ The bundle offers some additional twig extensions.
 
 The available extensions are:
 
- - `placeholdit` Filter which get URL from placehold.it service for an image placehold.
+ - `placeholdit` Filter/Function which returns URL/Image HTML tag from placehold.it service.
 
 Documentation
 -------------
 
- 1. [Installation](https://github.com/nejo/NejoTwigExtensionsBundle/tree/master/Resources/doc/installation.md)
- 2. [Usage](https://github.com/nejo/NejoTwigExtensionsBundle/tree/master/Resources/doc/usage.md)
+ * [Installation](https://github.com/nejo/NejoTwigExtensionsBundle/tree/master/Resources/doc/installation.md)
+ * Placeholdit
+   * [Filter usage](https://github.com/nejo/NejoTwigExtensionsBundle/tree/master/Resources/doc/placeholdit/filter_usage.md)
+   * [Function usage](https://github.com/nejo/NejoTwigExtensionsBundle/tree/master/Resources/doc/placeholdit/function_usage.md)
 
 License
 -------
