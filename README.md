@@ -9,8 +9,8 @@ Documentation
 
  * [Installation](https://github.com/nejo/NejoTwigExtensionsBundle/tree/master/Resources/doc/installation.md)
  * Placeholdit
-   * [Filter usage](https://github.com/nejo/NejoTwigExtensionsBundle/tree/master/Resources/doc/placeholdit/filter_usage.md)
-   * [Function usage](https://github.com/nejo/NejoTwigExtensionsBundle/tree/master/Resources/doc/placeholdit/function_usage.md)
+   * [Filter usage](https://github.com/nejo/NejoTwigExtensionsBundle/blob/master/Resources/doc/extensions/placeholdit.md#filter)
+   * [Function usage](https://github.com/nejo/NejoTwigExtensionsBundle/blob/master/Resources/doc/extensions/placeholdit.md#function)
 
 License
 -------
