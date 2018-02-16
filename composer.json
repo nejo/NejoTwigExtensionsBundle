@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Twig extensions for your Symfony2 project.",
     "keywords": ["twig", "twig extension", "symfony", "placeholder", "placehold.it", "image", "thumbnail"],
-    "license": "GNU",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Alejandro Cornejo",
